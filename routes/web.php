@@ -20,7 +20,7 @@ Route::get('/', function(){
 
 
 
-Route::group(['prefix'=>'admin'], function(){
+Route::group(['prefix'=>'admin','middleware'=>['auth','is_admin']], function(){
     Route::get('',[AdminDashboardController::class,'index']);
 });
 

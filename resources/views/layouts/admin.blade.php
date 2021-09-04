@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Abdulbasit-Dev</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+=
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -61,7 +63,7 @@
 
 
 
-    @yield('contnet')
+    @yield('content')
 
   </div>
   <!-- ./wrapper -->
@@ -103,5 +105,4 @@
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="{{asset("dist/js/pages/dashboard.js")}}"></script>
 </body>
-
 </html>
